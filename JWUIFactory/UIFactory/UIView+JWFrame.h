@@ -6,8 +6,6 @@
 //  Copyright © 2019 jarvis. All rights reserved.
 //
 
-#import <AppKit/AppKit.h>
-
 
 #import <UIKit/UIKit.h>
 

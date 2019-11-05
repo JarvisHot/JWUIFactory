@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "JWUIFactory.h"
+#import <Masonry/Masonry.h>
 @interface ViewController ()
 
 @end
@@ -16,6 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   UIView.create(10).frame(CGRectMake(20, 100, 100, 30)).backgroundColor([UIColor yellowColor]).addToSuperView(self.view).makeMasonry(^(MASConstraintMaker * _Nonnull make) {
+       make.left.equalTo(self.view).with.offset(20);
+       make.top.equalTo(self.view).with.offset(40);
+       make.right.equalTo(self.view).with.offset(-20);
+       make.height.mas_equalTo(60);
+    });
+    
+    
     // Do any additional setup after loading the view.
 }
 

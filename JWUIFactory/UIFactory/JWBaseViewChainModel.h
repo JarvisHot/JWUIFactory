@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define JW_CHAIN_PROPERTY    @property (nonatomic, copy, readonly)
 
 ///链式实现
 #define JW_CHAIN_IMPLEMENTATION(methodName, JWParamType, JWViewChainModelType, JWViewClass) \
@@ -22,13 +21,20 @@
 /// UIkit扩展声明
 #define JW_CATEGORY_EX_INTERFACE(viewClass,modelType)\
 @interface viewClass(EX)\
-JW_CHAIN_PROPERTY modelType *makeChain;\
+@property (nonatomic, copy, readonly) modelType *makeChain;\
++ (modelType *(^)(NSInteger tag))create;\
 @end
 /// UIkit 扩展实现
 #define JW_CATEGORY_EX_IMPLEMENTATION(viewClass,modelType)\
 @implementation viewClass (EX)\
++ (modelType *(^)(NSInteger tag))create {\
+   return ^modelType *(NSInteger tag){\
+         viewClass *view = [[viewClass alloc]init];\
+        return [[modelType alloc]initWithTag:tag andView:view];\
+     };\
+}\
 - (modelType *)makeChain {\
-return [viewClass alloc]initWithTag:self.tag andView:self];\
+return [[modelType alloc]initWithTag:self.tag andView:self];\
 }\
 @end
 
@@ -41,7 +47,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 视图的唯一标示
 @property (nonatomic, assign, readonly) NSInteger tag;
 
-/// 视图的唯一标示
 @property (nonatomic, strong, readonly) __kindof UIView *view;
 
 @property (nonatomic, assign, readonly) Class viewClass;
@@ -49,61 +54,73 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithTag:(NSInteger)tag andView:(__kindof UIView *)view;
 
 //MARK: ---------- Frame
-JW_CHAIN_PROPERTY T (^bounds)(CGRect frame);
-JW_CHAIN_PROPERTY T (^frame)(CGRect frame);
+@property (nonatomic, copy, readonly) T (^bounds)(CGRect frame);
+@property (nonatomic, copy, readonly) T (^frame)(CGRect frame);
 
-JW_CHAIN_PROPERTY T (^origin)(CGPoint origin);
-JW_CHAIN_PROPERTY T (^x)(CGFloat x);
-JW_CHAIN_PROPERTY T (^y)(CGFloat y);
+@property (nonatomic, copy, readonly) T (^origin)(CGPoint origin);
+@property (nonatomic, copy, readonly) T (^x)(CGFloat x);
+@property (nonatomic, copy, readonly) T (^y)(CGFloat y);
 
-JW_CHAIN_PROPERTY T (^ center)(CGPoint center);
-JW_CHAIN_PROPERTY T (^ centerX)(CGFloat centerX);
-JW_CHAIN_PROPERTY T (^ centerY)(CGFloat centerY);
+@property (nonatomic, copy, readonly) T (^ center)(CGPoint center);
+@property (nonatomic, copy, readonly) T (^ centerX)(CGFloat centerX);
+@property (nonatomic, copy, readonly) T (^ centerY)(CGFloat centerY);
 
-JW_CHAIN_PROPERTY T (^ top)(CGFloat top);
-JW_CHAIN_PROPERTY T (^ bottom)(CGFloat bottom);
-JW_CHAIN_PROPERTY T (^ left)(CGFloat left);
-JW_CHAIN_PROPERTY T (^ right)(CGFloat right);
+@property (nonatomic, copy, readonly) T (^ top)(CGFloat top);
+@property (nonatomic, copy, readonly) T (^ bottom)(CGFloat bottom);
+@property (nonatomic, copy, readonly) T (^ left)(CGFloat left);
+@property (nonatomic, copy, readonly) T (^ right)(CGFloat right);
 
 //MARK: ---------- Color
-JW_CHAIN_PROPERTY T (^ backgroundColor)(UIColor *backgroundColor);
-JW_CHAIN_PROPERTY T (^ tintColor)(UIColor *tintColor);
-JW_CHAIN_PROPERTY T (^ alpha)(CGFloat alpha);
+@property (nonatomic, copy, readonly) T (^ backgroundColor)(UIColor *backgroundColor);
+@property (nonatomic, copy, readonly) T (^ tintColor)(UIColor *tintColor);
+@property (nonatomic, copy, readonly) T (^ alpha)(CGFloat alpha);
 
 //MARK: ---------- Control
-JW_CHAIN_PROPERTY T (^ contentMode)(UIViewContentMode contentMode);
+@property (nonatomic, copy, readonly) T (^ contentMode)(UIViewContentMode contentMode);
 
-JW_CHAIN_PROPERTY T (^ opaque)(BOOL opaque);
-JW_CHAIN_PROPERTY T (^ hidden)(BOOL hidden);
-JW_CHAIN_PROPERTY T (^ clipsToBounds)(BOOL clipsToBounds);
+@property (nonatomic, copy, readonly) T (^ opaque)(BOOL opaque);
+@property (nonatomic, copy, readonly) T (^ hidden)(BOOL hidden);
+@property (nonatomic, copy, readonly) T (^ clipsToBounds)(BOOL clipsToBounds);
 
-JW_CHAIN_PROPERTY T (^ userInteractionEnabled)(BOOL userInteractionEnabled);
-JW_CHAIN_PROPERTY T (^ multipleTouchEnabled)(BOOL multipleTouchEnabled);
+@property (nonatomic, copy, readonly) T (^ userInteractionEnabled)(BOOL userInteractionEnabled);
+@property (nonatomic, copy, readonly) T (^ multipleTouchEnabled)(BOOL multipleTouchEnabled);
 
 //MARK: ---------- Layer
-JW_CHAIN_PROPERTY T (^ masksToBounds)(BOOL masksToBounds);
-JW_CHAIN_PROPERTY T (^ cornerRadius)(CGFloat cornerRadius);
+@property (nonatomic, copy, readonly) T (^ masksToBounds)(BOOL masksToBounds);
+@property (nonatomic, copy, readonly) T (^ cornerRadius)(CGFloat cornerRadius);
 
-JW_CHAIN_PROPERTY T (^ border)(CGFloat borderWidth, UIColor *borderColor);
-JW_CHAIN_PROPERTY T (^ borderWidth)(CGFloat borderWidth);
-JW_CHAIN_PROPERTY T (^ borderColor)(CGColorRef borderColor);
+@property (nonatomic, copy, readonly) T (^ border)(CGFloat borderWidth, UIColor *borderColor);
+@property (nonatomic, copy, readonly) T (^ borderWidth)(CGFloat borderWidth);
+@property (nonatomic, copy, readonly) T (^ borderColor)(CGColorRef borderColor);
 
-JW_CHAIN_PROPERTY T (^ zPosition)(CGFloat zPosition);
-JW_CHAIN_PROPERTY T (^ anchorPoint)(CGPoint anchorPoint);
+@property (nonatomic, copy, readonly) T (^ zPosition)(CGFloat zPosition);
+@property (nonatomic, copy, readonly) T (^ anchorPoint)(CGPoint anchorPoint);
 
-JW_CHAIN_PROPERTY T (^ shadow)(CGSize shadowOffset, CGFloat shadowRadius, UIColor *shadowColor, CGFloat shadowOpacity);
-JW_CHAIN_PROPERTY T (^ shadowColor)(CGColorRef shadowColor);
-JW_CHAIN_PROPERTY T (^ shadowOpacity)(CGFloat shadowOpacity);
-JW_CHAIN_PROPERTY T (^ shadowOffset)(CGSize shadowOffset);
-JW_CHAIN_PROPERTY T (^ shadowRadius)(CGFloat shadowRadius);
+@property (nonatomic, copy, readonly) T (^ shadow)(CGSize shadowOffset, CGFloat shadowRadius, UIColor *shadowColor, CGFloat shadowOpacity);
+@property (nonatomic, copy, readonly) T (^ shadowColor)(CGColorRef shadowColor);
+@property (nonatomic, copy, readonly) T (^ shadowOpacity)(CGFloat shadowOpacity);
+@property (nonatomic, copy, readonly) T (^ shadowOffset)(CGSize shadowOffset);
+@property (nonatomic, copy, readonly) T (^ shadowRadius)(CGFloat shadowRadius);
+@property (nonatomic, copy, readonly) T (^ shadowPath)(CGPathRef shadowPath);
 
-JW_CHAIN_PROPERTY T (^ transform)(CATransform3D transform);
+@property (nonatomic, copy, readonly) T (^ transform)(CATransform3D transform);
 
+//MARK: 布局相关
+@property (nonatomic, copy, readonly) T (^ sizeToFit)(void);
+@property (nonatomic, copy, readonly) CGSize (^ sizeThatFits)(CGSize size);
+@property (nonatomic, copy, readonly) T (^ layoutIfNeeded) (void);
+@property (nonatomic, copy, readonly) T (^ setNeedsLayout) (void);
+@property (nonatomic, copy, readonly) T (^ setNeedsDisplay) (void);
+@property (nonatomic, copy, readonly) T (^ setNeedsDisplayRect) (CGRect rect);
+
+@property (nonatomic, copy, readonly) T (^ addToSuperView)(UIView *superView);
+@property (nonatomic, copy, readonly) T (^ addSubView)(UIView *subView);
+@property (nonatomic, copy, readonly) T (^ removeFormSuperView)(void);
 
 //MARK: --------- masonry 如果导入masonry库的话就可用
-JW_CHAIN_PROPERTY T (^ masonry)( void (^constraints)(MASConstraintMaker *make) );
-JW_CHAIN_PROPERTY T (^ updateMasonry)( void (^constraints)(MASConstraintMaker *make) );
-JW_CHAIN_PROPERTY T (^ remakeMasonry)( void (^constraints)(MASConstraintMaker *make) );
+@property (nonatomic, copy, readonly) T (^ makeMasonry)( void (^constraints)(MASConstraintMaker *make) );
+@property (nonatomic, copy, readonly) T (^ updateMasonry)( void (^constraints)(MASConstraintMaker *make) );
+@property (nonatomic, copy, readonly) T (^ remakeMasonry)( void (^constraints)(MASConstraintMaker *make) );
 
 @end
 

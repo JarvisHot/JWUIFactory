@@ -8,7 +8,6 @@
 
 #import "UIView+JWFrame.h"
 
-#import <AppKit/AppKit.h>
 
 
 @implementation UIView (JWFrame)

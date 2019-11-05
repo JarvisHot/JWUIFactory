@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04835501237121EF0062076A /* JWButtonChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04835500237121EF0062076A /* JWButtonChainModel.m */; };
 		04DFB65A236FFAF3007E33C5 /* UIView+JWFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB659236FFAF3007E33C5 /* UIView+JWFrame.m */; };
+		04DFB65D237010D8007E33C5 /* JWViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB65C237010D8007E33C5 /* JWViewChainModel.m */; };
 		04E840D0236C1242003E693E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E840CF236C1242003E693E /* AppDelegate.m */; };
 		04E840D3236C1242003E693E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E840D2236C1242003E693E /* SceneDelegate.m */; };
 		04E840D6236C1242003E693E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E840D5236C1242003E693E /* ViewController.m */; };
@@ -20,8 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048354FF237121EF0062076A /* JWButtonChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWButtonChainModel.h; sourceTree = "<group>"; };
+		04835500237121EF0062076A /* JWButtonChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWButtonChainModel.m; sourceTree = "<group>"; };
 		04DFB658236FFAF3007E33C5 /* UIView+JWFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JWFrame.h"; sourceTree = "<group>"; };
 		04DFB659236FFAF3007E33C5 /* UIView+JWFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JWFrame.m"; sourceTree = "<group>"; };
+		04DFB65B237010D8007E33C5 /* JWViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWViewChainModel.h; sourceTree = "<group>"; };
+		04DFB65C237010D8007E33C5 /* JWViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWViewChainModel.m; sourceTree = "<group>"; };
+		04DFB65E23701473007E33C5 /* JWUIFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWUIFactory.h; sourceTree = "<group>"; };
 		04E840CB236C1242003E693E /* JWUIFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWUIFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E840CE236C1242003E693E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04E840CF236C1242003E693E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,8 +100,13 @@
 		04E840E7236C194E003E693E /* UIFactory */ = {
 			isa = PBXGroup;
 			children = (
+				04DFB65E23701473007E33C5 /* JWUIFactory.h */,
 				04E840E8236C1A3F003E693E /* JWBaseViewChainModel.h */,
 				04E840E9236C1A3F003E693E /* JWBaseViewChainModel.m */,
+				04DFB65B237010D8007E33C5 /* JWViewChainModel.h */,
+				04DFB65C237010D8007E33C5 /* JWViewChainModel.m */,
+				048354FF237121EF0062076A /* JWButtonChainModel.h */,
+				04835500237121EF0062076A /* JWButtonChainModel.m */,
 				04DFB658236FFAF3007E33C5 /* UIView+JWFrame.h */,
 				04DFB659236FFAF3007E33C5 /* UIView+JWFrame.m */,
 			);
@@ -214,6 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04835501237121EF0062076A /* JWButtonChainModel.m in Sources */,
+				04DFB65D237010D8007E33C5 /* JWViewChainModel.m in Sources */,
 				04E840D6236C1242003E693E /* ViewController.m in Sources */,
 				04DFB65A236FFAF3007E33C5 /* UIView+JWFrame.m in Sources */,
 				04E840D0236C1242003E693E /* AppDelegate.m in Sources */,
