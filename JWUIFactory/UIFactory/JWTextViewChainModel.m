@@ -1,0 +1,55 @@
+//
+//  JWTextViewChainModel.m
+//  JWUIFactory
+//
+//  Created by jarvis on 2019/11/6.
+//  Copyright © 2019 jarvis. All rights reserved.
+//
+
+#import "JWTextViewChainModel.h"
+#define  JW_CHAIN_TEXTVIEW_IMPLEMENTATION(method,paramType) JW_CHAIN_IMPLEMENTATION(method,paramType,JWTextViewChainModel *,UITextView)
+
+@implementation JWTextViewChainModel
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(delegate, id<UITextViewDelegate>);
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(text, NSString *);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(font, UIFont *);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(textColor, UIColor *);
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(textAlignment, NSTextAlignment);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(selectedRange, NSRange);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(editable, BOOL);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(selectable, BOOL);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(dataDetectorTypes, UIDataDetectorTypes);
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(keyboardType, UIKeyboardType);
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(allowsEditingTextAttributes, BOOL);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(attributedText, NSAttributedString *);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(typingAttributes, NSDictionary *);
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(clearsOnInsertion, BOOL);
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(textContainerInset, UIEdgeInsets);
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(linkTextAttributes, NSDictionary *);
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(contentSize, CGSize)
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(contentOffset, CGPoint)
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(contentInset, UIEdgeInsets)
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(bounces, BOOL)
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(alwaysBounceVertical, BOOL)
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(alwaysBounceHorizontal, BOOL)
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(pagingEnabled, BOOL)
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(scrollEnabled, BOOL)
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(showsHorizontalScrollIndicator, BOOL)
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(showsVerticalScrollIndicator, BOOL)
+
+JW_CHAIN_TEXTVIEW_IMPLEMENTATION(scrollsToTop, BOOL)
+
+@end
+
+JW_CATEGORY_EX_IMPLEMENTATION(UITextView, JWTextViewChainModel)

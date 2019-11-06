@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0479B8BE23726A31008296EA /* UIControl+JWEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479B8BD23726A31008296EA /* UIControl+JWEvent.m */; };
+		0479B8C1237278B2008296EA /* JWLabelChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479B8C0237278B2008296EA /* JWLabelChainModel.m */; };
+		0479B8C423729616008296EA /* JWImageViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479B8C323729616008296EA /* JWImageViewChainModel.m */; };
+		0479B8C72372A44C008296EA /* JWTextFieldChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479B8C62372A44C008296EA /* JWTextFieldChainModel.m */; };
+		0479B8CA2372ADB2008296EA /* JWTextViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479B8C92372ADB2008296EA /* JWTextViewChainModel.m */; };
+		0479B8CD2372AF50008296EA /* JWScrollViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479B8CC2372AF50008296EA /* JWScrollViewChainModel.m */; };
+		0479B8D02372B5D3008296EA /* JWTableViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479B8CF2372B5D3008296EA /* JWTableViewChainModel.m */; };
+		0479B8D32372B6E9008296EA /* JWCollectionViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479B8D22372B6E9008296EA /* JWCollectionViewChainModel.m */; };
 		04835501237121EF0062076A /* JWButtonChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04835500237121EF0062076A /* JWButtonChainModel.m */; };
+		04835504237173910062076A /* UIButton+JWCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04835503237173910062076A /* UIButton+JWCategory.m */; };
 		04DFB65A236FFAF3007E33C5 /* UIView+JWFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB659236FFAF3007E33C5 /* UIView+JWFrame.m */; };
 		04DFB65D237010D8007E33C5 /* JWViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB65C237010D8007E33C5 /* JWViewChainModel.m */; };
 		04E840D0236C1242003E693E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E840CF236C1242003E693E /* AppDelegate.m */; };
@@ -22,8 +31,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0479B8BC23726A31008296EA /* UIControl+JWEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+JWEvent.h"; sourceTree = "<group>"; };
+		0479B8BD23726A31008296EA /* UIControl+JWEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+JWEvent.m"; sourceTree = "<group>"; };
+		0479B8BF237278B2008296EA /* JWLabelChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWLabelChainModel.h; sourceTree = "<group>"; };
+		0479B8C0237278B2008296EA /* JWLabelChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWLabelChainModel.m; sourceTree = "<group>"; };
+		0479B8C223729616008296EA /* JWImageViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWImageViewChainModel.h; sourceTree = "<group>"; };
+		0479B8C323729616008296EA /* JWImageViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWImageViewChainModel.m; sourceTree = "<group>"; };
+		0479B8C52372A44C008296EA /* JWTextFieldChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWTextFieldChainModel.h; sourceTree = "<group>"; };
+		0479B8C62372A44C008296EA /* JWTextFieldChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWTextFieldChainModel.m; sourceTree = "<group>"; };
+		0479B8C82372ADB2008296EA /* JWTextViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWTextViewChainModel.h; sourceTree = "<group>"; };
+		0479B8C92372ADB2008296EA /* JWTextViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWTextViewChainModel.m; sourceTree = "<group>"; };
+		0479B8CB2372AF50008296EA /* JWScrollViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWScrollViewChainModel.h; sourceTree = "<group>"; };
+		0479B8CC2372AF50008296EA /* JWScrollViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWScrollViewChainModel.m; sourceTree = "<group>"; };
+		0479B8CE2372B5D3008296EA /* JWTableViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWTableViewChainModel.h; sourceTree = "<group>"; };
+		0479B8CF2372B5D3008296EA /* JWTableViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWTableViewChainModel.m; sourceTree = "<group>"; };
+		0479B8D12372B6E9008296EA /* JWCollectionViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWCollectionViewChainModel.h; sourceTree = "<group>"; };
+		0479B8D22372B6E9008296EA /* JWCollectionViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWCollectionViewChainModel.m; sourceTree = "<group>"; };
 		048354FF237121EF0062076A /* JWButtonChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWButtonChainModel.h; sourceTree = "<group>"; };
 		04835500237121EF0062076A /* JWButtonChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWButtonChainModel.m; sourceTree = "<group>"; };
+		04835502237173910062076A /* UIButton+JWCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+JWCategory.h"; sourceTree = "<group>"; };
+		04835503237173910062076A /* UIButton+JWCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JWCategory.m"; sourceTree = "<group>"; };
 		04DFB658236FFAF3007E33C5 /* UIView+JWFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JWFrame.h"; sourceTree = "<group>"; };
 		04DFB659236FFAF3007E33C5 /* UIView+JWFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JWFrame.m"; sourceTree = "<group>"; };
 		04DFB65B237010D8007E33C5 /* JWViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWViewChainModel.h; sourceTree = "<group>"; };
@@ -107,8 +134,26 @@
 				04DFB65C237010D8007E33C5 /* JWViewChainModel.m */,
 				048354FF237121EF0062076A /* JWButtonChainModel.h */,
 				04835500237121EF0062076A /* JWButtonChainModel.m */,
+				0479B8BF237278B2008296EA /* JWLabelChainModel.h */,
+				0479B8C0237278B2008296EA /* JWLabelChainModel.m */,
+				0479B8C223729616008296EA /* JWImageViewChainModel.h */,
+				0479B8C323729616008296EA /* JWImageViewChainModel.m */,
+				0479B8C52372A44C008296EA /* JWTextFieldChainModel.h */,
+				0479B8C62372A44C008296EA /* JWTextFieldChainModel.m */,
+				0479B8C82372ADB2008296EA /* JWTextViewChainModel.h */,
+				0479B8C92372ADB2008296EA /* JWTextViewChainModel.m */,
+				0479B8CB2372AF50008296EA /* JWScrollViewChainModel.h */,
+				0479B8CC2372AF50008296EA /* JWScrollViewChainModel.m */,
+				0479B8CE2372B5D3008296EA /* JWTableViewChainModel.h */,
+				0479B8CF2372B5D3008296EA /* JWTableViewChainModel.m */,
+				0479B8D12372B6E9008296EA /* JWCollectionViewChainModel.h */,
+				0479B8D22372B6E9008296EA /* JWCollectionViewChainModel.m */,
 				04DFB658236FFAF3007E33C5 /* UIView+JWFrame.h */,
 				04DFB659236FFAF3007E33C5 /* UIView+JWFrame.m */,
+				04835502237173910062076A /* UIButton+JWCategory.h */,
+				04835503237173910062076A /* UIButton+JWCategory.m */,
+				0479B8BC23726A31008296EA /* UIControl+JWEvent.h */,
+				0479B8BD23726A31008296EA /* UIControl+JWEvent.m */,
 			);
 			path = UIFactory;
 			sourceTree = "<group>";
@@ -227,12 +272,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				04835501237121EF0062076A /* JWButtonChainModel.m in Sources */,
+				0479B8C423729616008296EA /* JWImageViewChainModel.m in Sources */,
+				0479B8CD2372AF50008296EA /* JWScrollViewChainModel.m in Sources */,
 				04DFB65D237010D8007E33C5 /* JWViewChainModel.m in Sources */,
 				04E840D6236C1242003E693E /* ViewController.m in Sources */,
+				0479B8C1237278B2008296EA /* JWLabelChainModel.m in Sources */,
+				0479B8BE23726A31008296EA /* UIControl+JWEvent.m in Sources */,
+				0479B8CA2372ADB2008296EA /* JWTextViewChainModel.m in Sources */,
+				0479B8C72372A44C008296EA /* JWTextFieldChainModel.m in Sources */,
 				04DFB65A236FFAF3007E33C5 /* UIView+JWFrame.m in Sources */,
+				0479B8D32372B6E9008296EA /* JWCollectionViewChainModel.m in Sources */,
+				0479B8D02372B5D3008296EA /* JWTableViewChainModel.m in Sources */,
 				04E840D0236C1242003E693E /* AppDelegate.m in Sources */,
 				04E840EA236C1A3F003E693E /* JWBaseViewChainModel.m in Sources */,
 				04E840E1236C124F003E693E /* main.m in Sources */,
+				04835504237173910062076A /* UIButton+JWCategory.m in Sources */,
 				04E840D3236C1242003E693E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
