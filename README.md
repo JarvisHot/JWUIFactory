@@ -24,6 +24,5 @@
     }).addToSuperView(self.view);
     UIScrollView.create(14).frame(CGRectMake(0, 340, 300, 200)).contentSize(CGSizeMake(0, 300)).addToSuperView(self.view).delegate(self).backgroundColor(UIColor.yellowColor);
 ```
-
-
+<br>
 ###如果需要使用Masonry布局请自行导入 `pod 'Masonry'`并在你的头文件中引入`#import <Masonry/Masonry.h>`
