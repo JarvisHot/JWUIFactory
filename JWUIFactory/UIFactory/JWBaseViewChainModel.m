@@ -197,7 +197,7 @@ JW_CHAIN_MASONRY_IMPLEMENTATION(makeMasonry, mas_makeConstraints)
 JW_CHAIN_MASONRY_IMPLEMENTATION(updateMasonry, mas_updateConstraints)
 JW_CHAIN_MASONRY_IMPLEMENTATION(remakeMasonry, mas_remakeConstraints)
 #else
-JW_CHAIN_MASONRY_IMPLEMENTATION_NULL(masonry, mas_makeConstraints)
+JW_CHAIN_MASONRY_IMPLEMENTATION_NULL(makeMasonry, mas_makeConstraints)
 JW_CHAIN_MASONRY_IMPLEMENTATION_NULL(updateMasonry, mas_updateConstraints)
 JW_CHAIN_MASONRY_IMPLEMENTATION_NULL(remakeMasonry, mas_remakeConstraints)
 #endif
