@@ -12,6 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 @class JWButtonChainModel;
 
+
+
 @interface JWButtonChainModel : JWBaseViewChainModel <JWButtonChainModel *>
 
 /// edgeInsets
@@ -41,6 +43,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 JW_CATEGORY_EX_INTERFACE(UIButton, JWButtonChainModel);
 
-
+static inline JWButtonChainModel *UIButtonMakeChain(NSInteger tag,UIButtonType type) {
+    UIButton *btn = [UIButton buttonWithType:type];
+    btn.tag = tag;
+    return btn.makeChain;
+}
 
 NS_ASSUME_NONNULL_END

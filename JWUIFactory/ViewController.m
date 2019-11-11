@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "JWUIFactory.h"
 #import <Masonry/Masonry.h>
-@interface ViewController ()<UIScrollViewDelegate>
+@interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -33,8 +33,21 @@
         NSLog(@"textfield.text----%@",sender.text);
     }).addToSuperView(self.view);
     UIScrollView.create(14).frame(CGRectMake(0, 340, 300, 200)).contentSize(CGSizeMake(0, 300)).addToSuperView(self.view).delegate(self).backgroundColor(UIColor.yellowColor);
-    
+    UITableViewMakeChain(1, UITableViewStyleGrouped).addToSuperView(self.view).makeMasonry(^(MASConstraintMaker * _Nonnull make) {
+        make.edges.equalTo(self.view);
+    }).delegate(self).dataSource(self).rowHeight(45).sectionHeaderHeight(130).sectionFooterHeight(200).addToSuperView(self.view);
     // Do any additional setup after loading the view.
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell1"];
+    cell.backgroundColor = [UIColor purpleColor];
+    return cell;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"scroll------%f",scrollView.contentOffset.y);

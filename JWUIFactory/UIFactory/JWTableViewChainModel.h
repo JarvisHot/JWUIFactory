@@ -56,6 +56,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) JWTableViewChainModel *(^ scrollsToTop)(BOOL scrollsToTop);
 
 @end
-
 JW_CATEGORY_EX_INTERFACE(UITableView, JWTableViewChainModel)
+
+static inline JWTableViewChainModel *UITableViewMakeChain(NSInteger tag,UITableViewStyle style) {
+    UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:style];
+    table.tag = tag;
+    return table.makeChain;
+}
+
 NS_ASSUME_NONNULL_END
