@@ -7,6 +7,7 @@
 //
 
 #import "JWCollectionViewChainModel.h"
+#import "UIScrollView+JWCategort.h"
 
 #define  JW_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(method,paramType) JW_CHAIN_IMPLEMENTATION(method,paramType,JWCollectionViewChainModel *,UICollectionView)
 
