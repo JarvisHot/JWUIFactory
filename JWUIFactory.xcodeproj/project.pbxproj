@@ -28,6 +28,7 @@
 		04E840E1236C124F003E693E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E840E0236C124F003E693E /* main.m */; };
 		04E840EA236C1A3F003E693E /* JWBaseViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E840E9236C1A3F003E693E /* JWBaseViewChainModel.m */; };
 		292EAFAC093C1B3F1DACCED4 /* libPods-JWUIFactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9375151763AC949AC1C24A25 /* libPods-JWUIFactory.a */; };
+		63B56509237BA4FE004D305A /* UIScrollView+JWCategort.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B56508237BA4FE004D305A /* UIScrollView+JWCategort.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		04E840E8236C1A3F003E693E /* JWBaseViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWBaseViewChainModel.h; sourceTree = "<group>"; };
 		04E840E9236C1A3F003E693E /* JWBaseViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWBaseViewChainModel.m; sourceTree = "<group>"; };
 		2BFA673652D43D136EFB5857 /* Pods-JWUIFactory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWUIFactory.debug.xcconfig"; path = "Target Support Files/Pods-JWUIFactory/Pods-JWUIFactory.debug.xcconfig"; sourceTree = "<group>"; };
+		63B56507237BA4FE004D305A /* UIScrollView+JWCategort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JWCategort.h"; sourceTree = "<group>"; };
+		63B56508237BA4FE004D305A /* UIScrollView+JWCategort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JWCategort.m"; sourceTree = "<group>"; };
 		9375151763AC949AC1C24A25 /* libPods-JWUIFactory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JWUIFactory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1377507F6A156F5827168B /* Pods-JWUIFactory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JWUIFactory.release.xcconfig"; path = "Target Support Files/Pods-JWUIFactory/Pods-JWUIFactory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +157,8 @@
 				04835503237173910062076A /* UIButton+JWCategory.m */,
 				0479B8BC23726A31008296EA /* UIControl+JWEvent.h */,
 				0479B8BD23726A31008296EA /* UIControl+JWEvent.m */,
+				63B56507237BA4FE004D305A /* UIScrollView+JWCategort.h */,
+				63B56508237BA4FE004D305A /* UIScrollView+JWCategort.m */,
 			);
 			path = UIFactory;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				04E840D0236C1242003E693E /* AppDelegate.m in Sources */,
 				04E840EA236C1A3F003E693E /* JWBaseViewChainModel.m in Sources */,
 				04E840E1236C124F003E693E /* main.m in Sources */,
+				63B56509237BA4FE004D305A /* UIScrollView+JWCategort.m in Sources */,
 				04835504237173910062076A /* UIButton+JWCategory.m in Sources */,
 				04E840D3236C1242003E693E /* SceneDelegate.m in Sources */,
 			);

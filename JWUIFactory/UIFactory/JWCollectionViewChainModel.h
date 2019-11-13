@@ -36,10 +36,36 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly) JWCollectionViewChainModel *(^ scrollsToTop)(BOOL scrollsToTop);
 
+
+@property (nonatomic, copy, readonly) JWCollectionViewChainModel *(^ registerCellClass)(Class cellClass, NSString *identifier);
+
+@property (nonatomic, copy, readonly) JWCollectionViewChainModel *(^ registerCellNib)(UINib * nib, NSString *identifier);
+
+@property (nonatomic, copy, readonly) JWCollectionViewChainModel *(^ registerViewClass)(Class viewClass, NSString *identifier, NSString *kind);
+
+@property (nonatomic, copy, readonly) JWCollectionViewChainModel *(^ registerViewNib)(UINib * viewNib, NSString *identifier, NSString *kind);
+@property (nonatomic, copy, readonly) JWCollectionViewChainModel *(^ adJustedContentIOS11)(void);
+
 @end
 
-JW_CATEGORY_EX_INTERFACE(UICollectionView, JWCollectionViewChainModel)
 
+
+@interface UICollectionView(EX)
+@property (nonatomic, copy, readonly) JWCollectionViewChainModel *makeChain;
++ (JWCollectionViewChainModel *(^)(NSInteger tag, UICollectionViewLayout *layout))create;
+@end
+
+@implementation UICollectionView (EX)
++ (JWCollectionViewChainModel *(^)(NSInteger tag, UICollectionViewLayout *layout))create {
+   return ^JWCollectionViewChainModel *(NSInteger tag, UICollectionViewLayout *layout){
+         UICollectionView *view = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+        return [[JWCollectionViewChainModel alloc]initWithTag:tag andView:view];
+     };
+}
+- (JWCollectionViewChainModel *)makeChain {
+return [[JWCollectionViewChainModel alloc]initWithTag:self.tag andView:self];
+}
+@end
 NS_ASSUME_NONNULL_END
 
 

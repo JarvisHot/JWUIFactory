@@ -7,6 +7,8 @@
 //
 
 #import "JWScrollViewChainModel.h"
+#import "UIScrollView+JWCategort.h"
+
 #define  JW_CHAIN_SCROLLVIEW_IMPLEMENTATION(method,paramType) JW_CHAIN_IMPLEMENTATION(method,paramType,JWScrollViewChainModel *,UIScrollView)
 
 @implementation JWScrollViewChainModel
@@ -29,6 +31,14 @@ JW_CHAIN_SCROLLVIEW_IMPLEMENTATION(showsVerticalScrollIndicator, BOOL)
 
 JW_CHAIN_SCROLLVIEW_IMPLEMENTATION(scrollsToTop, BOOL)
 
+- (JWScrollViewChainModel * _Nonnull (^)(void))adJustedContentIOS11{
+    return ^ (){
+        if (@available(iOS 11.0, *)) {
+            [(UIScrollView *)self.view adJustedContentIOS11];
+        }
+        return self;
+    };
+}
 @end
 
 JW_CATEGORY_EX_IMPLEMENTATION(UIScrollView, JWScrollViewChainModel)

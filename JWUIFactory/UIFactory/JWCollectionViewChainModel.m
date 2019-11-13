@@ -36,6 +36,40 @@ JW_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(showsVerticalScrollIndicator, BOOL)
 
 JW_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(scrollsToTop, BOOL)
 
+- (JWCollectionViewChainModel * _Nonnull (^)(UINib * _Nonnull, NSString * _Nonnull))registerCellNib{
+    return ^ (UINib *nib, NSString *identifier){
+        [(UICollectionView *)self.view registerNib:nib forCellWithReuseIdentifier:identifier];
+        return self;
+    };
+}
+
+- (JWCollectionViewChainModel * _Nonnull (^)(Class  _Nonnull __unsafe_unretained, NSString * _Nonnull))registerCellClass{
+    return ^ (Class class, NSString *identifier){
+        [(UICollectionView *)self.view registerClass:class forCellWithReuseIdentifier:identifier];
+        return self;
+    };
+}
+
+- (JWCollectionViewChainModel * _Nonnull (^)(Class  _Nonnull __unsafe_unretained, NSString * _Nonnull, NSString * _Nonnull))registerViewClass{
+    return ^ (Class class, NSString *identifier, NSString *kind){
+        [(UICollectionView *)self.view registerClass:class forSupplementaryViewOfKind:kind withReuseIdentifier:identifier];
+        return self;
+    };
+}
+- (JWCollectionViewChainModel * _Nonnull (^)(UINib * _Nonnull, NSString * _Nonnull, NSString * _Nonnull))registerViewNib{
+    return ^ (UINib * nib, NSString *identifier, NSString *kind){
+        [(UICollectionView *)self.view registerNib:nib forSupplementaryViewOfKind:kind withReuseIdentifier:identifier];
+        return self;
+    };
+}
+
+- (JWCollectionViewChainModel * _Nonnull (^)(void))adJustedContentIOS11{
+    return ^ (){
+        if (@available(iOS 11.0, *)) {
+            [(UIScrollView *)self.view adJustedContentIOS11];
+        }
+        return self;
+    };
+}
 @end
 
-JW_CATEGORY_EX_IMPLEMENTATION(UICollectionView, JWCollectionViewChainModel)

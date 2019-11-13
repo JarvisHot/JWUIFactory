@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) JWTableViewChainModel *(^ separatorColor)(UIColor *separatorColor);
 
 @property (nonatomic, copy, readonly) JWTableViewChainModel *(^ tableHeaderView)(UIView * tableHeaderView);
-@property (nonatomic, copy, readonly) JWTableViewChainModel *(^ tableFooterView)(UIView * separatorStyle);
+@property (nonatomic, copy, readonly) JWTableViewChainModel *(^ tableFooterView)(UIView * tableFooterView);
 
 @property (nonatomic, copy, readonly) JWTableViewChainModel *(^ sectionIndexBackgroundColor)(UIColor *sectionIndexBackgroundColor);
 @property (nonatomic, copy, readonly) JWTableViewChainModel *(^ sectionIndexColor)(UIColor *sectionIndexColor);
@@ -55,13 +55,34 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly) JWTableViewChainModel *(^ scrollsToTop)(BOOL scrollsToTop);
 
-@end
-JW_CATEGORY_EX_INTERFACE(UITableView, JWTableViewChainModel)
+@property (nonatomic, copy, readonly) JWTableViewChainModel *(^ registerCellClass)(Class cellClass, NSString *identifier);
 
-static inline JWTableViewChainModel *UITableViewMakeChain(NSInteger tag,UITableViewStyle style) {
-    UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:style];
-    table.tag = tag;
-    return table.makeChain;
+@property (nonatomic, copy, readonly) JWTableViewChainModel *(^ registerCellNib)(UINib * nib, NSString *identifier);
+
+@property (nonatomic, copy, readonly) JWTableViewChainModel *(^ registerViewClass)(Class viewClass, NSString *identifier);
+
+@property (nonatomic, copy, readonly) JWTableViewChainModel *(^ registerViewNib)(UINib * viewNib, NSString *identifier);
+@property (nonatomic, copy, readonly) JWTableViewChainModel *(^ adJustedContentIOS11)(void);
+
+@end
+
+
+
+@interface UITableView(EX)
+@property (nonatomic, copy, readonly) JWTableViewChainModel *makeChain;
++ (JWTableViewChainModel *(^)(NSInteger tag, UITableViewStyle style))create;
+@end
+@implementation UITableView (EX)
++ (JWTableViewChainModel *(^)(NSInteger tag, UITableViewStyle style))create {
+   return ^JWTableViewChainModel *(NSInteger tag, UITableViewStyle style) {
+         UITableView *view = [[UITableView alloc]initWithFrame:CGRectZero style:style];
+        return [[JWTableViewChainModel alloc]initWithTag:tag andView:view];
+     };
 }
+- (JWTableViewChainModel *)makeChain {
+return [[JWTableViewChainModel alloc]initWithTag:self.tag andView:self];
+}
+@end
+
 
 NS_ASSUME_NONNULL_END

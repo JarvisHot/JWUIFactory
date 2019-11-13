@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "JWUIFactory.h"
 #import <Masonry/Masonry.h>
-@interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource>
 
 @end
 
@@ -33,9 +33,17 @@
         NSLog(@"textfield.text----%@",sender.text);
     }).addToSuperView(self.view);
     UIScrollView.create(14).frame(CGRectMake(0, 340, 300, 200)).contentSize(CGSizeMake(0, 300)).addToSuperView(self.view).delegate(self).backgroundColor(UIColor.yellowColor);
-    UITableViewMakeChain(1, UITableViewStyleGrouped).addToSuperView(self.view).makeMasonry(^(MASConstraintMaker * _Nonnull make) {
+    UITableView.create(1, UITableViewStyleGrouped).addToSuperView(self.view).makeMasonry(^(MASConstraintMaker * _Nonnull make) {
         make.edges.equalTo(self.view);
     }).delegate(self).dataSource(self).rowHeight(45).sectionHeaderHeight(130).sectionFooterHeight(200).addToSuperView(self.view);
+    UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
+    flowLayout.minimumLineSpacing = 10;
+    flowLayout.minimumInteritemSpacing =10;
+    UICollectionView *collection = UICollectionView.create(11,flowLayout).delegate(self).dataSource(self).addToSuperView(self.view).makeMasonry(^(MASConstraintMaker * _Nonnull make) {
+        make.edges.equalTo(self.view);
+        
+    }).bounces(YES).scrollEnabled(YES).registerCellClass([UICollectionViewCell class],@"cell").view;
+//    [collection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     // Do any additional setup after loading the view.
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -51,6 +59,35 @@
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"scroll------%f",scrollView.contentOffset.y);
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 2;
+}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 10, 5, 10);
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (section==0) {
+        return 6;
+    }
+    return 1;
+}
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor yellowColor];
+    return cell;
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(UIScreen.mainScreen.bounds.size.width/2-15, UIScreen.mainScreen.bounds.size.width/2-15);
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(UIScreen.mainScreen.bounds.size.width, 20);
 }
 
 @end

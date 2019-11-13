@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly) JWScrollViewChainModel *(^ scrollsToTop)(BOOL scrollsToTop);
 
+@property (nonatomic, copy, readonly) JWScrollViewChainModel *(^ adJustedContentIOS11)(void);
 @end
 JW_CATEGORY_EX_INTERFACE(UIScrollView, JWScrollViewChainModel)
 

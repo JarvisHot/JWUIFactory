@@ -7,6 +7,8 @@
 //
 
 #import "JWTableViewChainModel.h"
+#import "UIScrollView+JWCategort.h"
+
 #define  JW_CHAIN_TABLEVIEW_IMPLEMENTATION(method,paramType) JW_CHAIN_IMPLEMENTATION(method,paramType,JWTableViewChainModel *,UITableView)
 
 @implementation JWTableViewChainModel
@@ -54,6 +56,43 @@ JW_CHAIN_TABLEVIEW_IMPLEMENTATION(showsHorizontalScrollIndicator, BOOL)
 JW_CHAIN_TABLEVIEW_IMPLEMENTATION(showsVerticalScrollIndicator, BOOL)
 
 JW_CHAIN_TABLEVIEW_IMPLEMENTATION(scrollsToTop, BOOL)
+
+- (JWTableViewChainModel * _Nonnull (^)(UINib * _Nonnull, NSString * _Nonnull))registerCellNib{
+    return ^ (UINib *nib, NSString *identifier){
+        [(UITableView *)self.view registerNib:nib forCellReuseIdentifier:identifier];
+        return self;
+    };
+}
+
+- (JWTableViewChainModel * _Nonnull (^)(UINib * _Nonnull, NSString * _Nonnull))registerViewNib{
+    return ^ (UINib *nib, NSString *identifier){
+        [(UITableView *)self.view registerNib:nib forHeaderFooterViewReuseIdentifier:identifier];
+        return self;
+    };
+}
+
+- (JWTableViewChainModel * _Nonnull (^)(Class  _Nonnull __unsafe_unretained, NSString * _Nonnull))registerCellClass{
+    return ^ (Class class, NSString *identifier){
+        [(UITableView *)self.view registerClass:class forCellReuseIdentifier:identifier];
+        return self;
+    };
+}
+
+- (JWTableViewChainModel * _Nonnull (^)(Class  _Nonnull __unsafe_unretained, NSString * _Nonnull))registerViewClass{
+    return ^ (Class class, NSString *identifier){
+        [(UITableView *)self.view registerClass:class forHeaderFooterViewReuseIdentifier:identifier];
+        
+        return self;
+    };
+}
+- (JWTableViewChainModel * _Nonnull (^)(void))adJustedContentIOS11{
+    return ^ (){
+        if (@available(iOS 11.0, *)) {
+            [(UIScrollView *)self.view adJustedContentIOS11];
+        }
+        return self;
+    };
+}
 @end
 
-JW_CATEGORY_EX_IMPLEMENTATION(UITableView, JWTableViewChainModel)
+
